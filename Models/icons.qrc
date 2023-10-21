@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../Desktop/number-1.png</file>
+        <file>../Desktop/number-2.png</file>
+        <file>../Desktop/number-3.png</file>
+        <file>../../../Workspace/УЧЕБА 2022-2023/АВРОРА/Files/number-1.png</file>
+        <file>../../../Workspace/УЧЕБА 2022-2023/АВРОРА/Files/number-2.png</file>
+        <file>../../../Workspace/УЧЕБА 2022-2023/АВРОРА/Files/number-3.png</file>
+    </qresource>
+</RCC>
