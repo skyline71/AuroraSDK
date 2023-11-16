@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.auroraos.Task2
+Exec=/usr/bin/ru.auroraos.Task2
+Name=Task2
+Name[ru]=Задание 2
+
+[X-Application]
+Permissions=
+OrganizationName=ru.auroraos
+ApplicationName=Task2
+ExecDBus=/usr/bin/ru.auroraos.Task2
