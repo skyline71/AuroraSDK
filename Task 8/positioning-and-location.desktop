@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=positioning-and-location
+Exec=positioning-and-location
+Name=Positioning and location
+Name[ru]=Позиционирование и карты
