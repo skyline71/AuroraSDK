@@ -27,10 +27,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hello Client! </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Server error: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -56,6 +52,10 @@
     </message>
     <message>
         <source>Send image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hello Client! Send me something</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -33,7 +33,7 @@ SilicaListView {
         model.append({
                          type: "incoming",
                          date: new Date(),
-                         content: JSON.stringify({ type: "image", source: source }),
+                         content: JSON.stringify({ type: "image", source: source.toString() }),
                          user: user
                      });
     }
@@ -42,7 +42,7 @@ SilicaListView {
         model.append({
                          type: "outgoing",
                          date: new Date(),
-                         content: JSON.stringify({ type: "image", source: source }),
+                         content: JSON.stringify({ type: "image", source: source.toString() }),
                          user: user
                      });
     }

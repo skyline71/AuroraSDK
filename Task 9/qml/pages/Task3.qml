@@ -1,7 +1,8 @@
-import QtQuick 2.6
+﻿import QtQuick 2.6
 import Sailfish.Silica 1.0
 import QtWebSockets 1.0
 import "../assets"
+import Base64 1.0
 
 Page {
     property int count : 0
@@ -35,6 +36,7 @@ Page {
         id: socket
         url: socketServer.url
         active: false
+
         onTextMessageReceived: {
             chatView.postIncomingText(message, qsTr("Server"))
             chatView.scrollToBottom();
@@ -51,6 +53,7 @@ Page {
         }
         Component.onCompleted: console.log("Listening on url from server:", url)
     }
+
     SilicaFlickable {
         anchors.fill: parent
 
@@ -87,6 +90,9 @@ Page {
                 }
             }
         }
+
+        Base64 { id: base64 }
+
         PushUpMenu {
             MenuItem {
                 text: qsTr("Send image")
@@ -94,8 +100,10 @@ Page {
                     var imagePicker =
                         pageStack.push("Sailfish.Pickers.ImagePickerPage");
                     imagePicker.selectedContentChanged.connect(function () {
-                        // ToDo: post image
-                        // ToDo: send image
+                        var image = imagePicker.selectedContent
+                        chatView.postOutgoingImage(image, qsTr("Me"))
+                        chatView.scrollToBottom();
+                        //To-Do: image encoding to websocket
                     });
                 }
             }

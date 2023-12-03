@@ -17,57 +17,57 @@
 <context>
     <name>Task3</name>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="12"/>
+        <location filename="../qml/pages/Task3.qml" line="14"/>
         <source>Server received message: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="13"/>
-        <source>Hello Client! </source>
+        <location filename="../qml/pages/Task3.qml" line="17"/>
+        <source>Hello Client! Send me something</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="18"/>
+        <location filename="../qml/pages/Task3.qml" line="27"/>
         <source>Server error: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="37"/>
+        <location filename="../qml/pages/Task3.qml" line="46"/>
         <source>Socket opened</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="39"/>
+        <location filename="../qml/pages/Task3.qml" line="48"/>
         <source>Socket closed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="57"/>
+        <location filename="../qml/pages/Task3.qml" line="66"/>
         <source>WebSockets</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="68"/>
+        <location filename="../qml/pages/Task3.qml" line="77"/>
         <source>Input message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="69"/>
+        <location filename="../qml/pages/Task3.qml" line="78"/>
         <source>Message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="73"/>
+        <location filename="../qml/pages/Task3.qml" line="82"/>
         <source>Me</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="83"/>
+        <location filename="../qml/pages/Task3.qml" line="92"/>
         <source>Send image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Task3.qml" line="30"/>
+        <location filename="../qml/pages/Task3.qml" line="39"/>
         <source>Server</source>
         <translation type="unfinished"></translation>
     </message>
