@@ -1,23 +1,44 @@
-﻿import QtQuick 2.6
+import QtQuick 2.6
 import Sailfish.Silica 1.0
 import QtWebSockets 1.0
 import "../assets"
+import Base64 1.0
 
 Page {
-    property string messageType: "text"
+    property int count : 0
+
+    WebSocketServer {
+        id: socketServer
+        listen: true
+        onClientConnected: {
+            webSocket.onTextMessageReceived.connect(function(message) {
+                console.log(qsTr("Server received message: %1").arg(message));
+                var text = JSON.parse(message)
+                if(count==0) {
+                    webSocket.sendTextMessage(qsTr("Hello Client! Send me something"));
+                }
+                else {
+                    webSocket.sendTextMessage(qsTr(text.data));
+                }
+                count++
+            });
+            console.log("WebSocket connected")
+        }
+        onErrorStringChanged: {
+            console.log(qsTr("Server error: %1").arg(errorString));
+        }
+        Component.onCompleted: {
+            console.log("Listening on url:", url)
+        }
+    }
 
     WebSocket {
         id: socket
-        url: "ws://192.168.1.3:9000"
-        active: true
+        url: socketServer.url
+        active: false
 
         onTextMessageReceived: {
-            if(messageType=="text") {
-                chatView.postIncomingText(message, qsTr("Server"))
-            }
-            else if(messageType=="image") {
-                chatView.postIncomingImage(message, qsTr("Server"))
-            }
+            chatView.postIncomingText(message, qsTr("Server"))
             chatView.scrollToBottom();
         }
         onStatusChanged: {
@@ -54,7 +75,6 @@ Page {
                 color: Theme.rgba(Theme.highlightBackgroundColor, Theme.highlightBackgroundOpacity)
 
                 TextField {
-                    id: textField
                     width: parent.width
                     enabled: socket.status === WebSocket.Open
                     placeholderText: qsTr("Input message")
@@ -63,14 +83,15 @@ Page {
                     EnterKey.iconSource: "image://theme/icon-m-sms"
                     EnterKey.onClicked: {
                         chatView.postOutgoingText(text, qsTr("Me"));
-                        messageType = "text"
-                        socket.sendTextMessage(JSON.stringify({type: messageType, data: text}));
-                        text = "";
                         chatView.scrollToBottom();
+                        socket.sendTextMessage(JSON.stringify({type: "text", data: text}));
+                        text = "";
                     }
                 }
             }
         }
+
+        Base64 { id: base64 }
 
         PushUpMenu {
             MenuItem {
@@ -81,10 +102,8 @@ Page {
                     imagePicker.selectedContentChanged.connect(function () {
                         var image = imagePicker.selectedContent
                         chatView.postOutgoingImage(image, qsTr("Me"))
-                        messageType = "image"
-                        socket.sendTextMessage(JSON.stringify({type: messageType, data: image.toString()}));
-                        textField.text = ""
                         chatView.scrollToBottom();
+                        //To-Do: image encoding to websocket
                     });
                 }
             }

@@ -47,6 +47,7 @@ SilicaListView {
                      });
     }
 
+    flickableDirection : Flickable.VerticalFlick
     model: ListModel { id: listModel }
     spacing: Theme.paddingLarge
     delegate: ListItem {
