@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.auroraos.threads
+Exec=/usr/bin/ru.auroraos.threads
+Name=Threads
+Name[ru]=Потоки
+
+[X-Application]
+Permissions=
+OrganizationName=ru.auroraos
+ApplicationName=threads
+ExecDBus=/usr/bin/ru.auroraos.threads
