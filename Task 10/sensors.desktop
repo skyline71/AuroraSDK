@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=sensors
+Exec=sensors
+Name=Sensors
+Name[ru]=Датчики
